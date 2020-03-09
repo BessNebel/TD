@@ -12,7 +12,7 @@ public class LevelSlotMenuController : MonoBehaviour
     }
     else
     {
-      foreach(var data in AppController.I.Towers)
+      foreach(var data in AppController.Instance.Level.Data.Towers)
       {
         AddUnit(slot, data, false);
       }

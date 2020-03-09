@@ -3,22 +3,20 @@ using UnityEngine.U2D;
 
 public class AppController : MonoBehaviour
 {
-  public static AppController I = null;
+  public static AppController Instance = null;
 
   public UIController UI;
 
   public SpriteAtlas Atlas;
   public LevelController Level;
-  public TowerData[] Towers;
-  public WaveData[] Waves;
 
   private void Start()
   {
-    if (I == null)
+    if (Instance == null)
     {
-      I = this;
+      Instance = this;
     }
-    else if (I == this)
+    else if (Instance == this)
     {
       Destroy(gameObject);
     }

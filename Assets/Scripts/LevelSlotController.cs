@@ -21,7 +21,7 @@ public class LevelSlotController : MonoBehaviour, IPointerClickHandler
 
   public void OnBuyTry(TowerData data)
   {
-    if (Tower == null && AppController.I.UI.Withdraw(data.BuildPrice)) {
+    if (Tower == null && AppController.Instance.UI.Withdraw(data.BuildPrice)) {
       Tower = Instantiate(Resources.Load("Prefabs/Tower"), transform) as GameObject;
       Tower.GetComponent<TowerController>().Init(data);      
       OnMenuBuyClose();
@@ -30,7 +30,7 @@ public class LevelSlotController : MonoBehaviour, IPointerClickHandler
 
   public void OnSell(TowerData data)
   {
-    AppController.I.UI.Gain(data.SellPrice);
+    AppController.Instance.UI.Gain(data.SellPrice);
 
     Tower.GetComponent<TowerController>().OnSell();
 
