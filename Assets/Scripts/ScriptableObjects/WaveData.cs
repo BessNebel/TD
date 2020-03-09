@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(menuName = "ScriptableObjects/Wave", order = 3)]
+[CreateAssetMenu(menuName = "ScriptableObjects/Wave")]
 public class WaveData : ScriptableObject
 {
   public int Duration;

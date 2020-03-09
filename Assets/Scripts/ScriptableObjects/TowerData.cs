@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(menuName = "ScriptableObjects/Tower", order = 1)]
+[CreateAssetMenu(menuName = "ScriptableObjects/Tower")]
 public class TowerData : ScriptableObject
 {
   public int BuildPrice;

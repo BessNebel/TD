@@ -19,7 +19,7 @@ public class LevelSlotMenuUnitController : MonoBehaviour, IPointerClickHandler
     Data = data;
     Selling = selling;
 
-    ImageUnit.sprite = AppController.I.Atlas.GetSprite(data.SpriteName);
+    ImageUnit.sprite = AppController.Instance.Atlas.GetSprite(data.SpriteName);
 
     if (selling)
     {

@@ -19,15 +19,15 @@ public class LevelController : MonoBehaviour
 
   private IEnumerator EnemyAddCoroutine(int waveIndex = 0)
   {
-    var duration = AppController.I.Waves[waveIndex].Duration;
+    var duration = AppController.Instance.Waves[waveIndex].Duration;
 
-    AppController.I.UI.SetWave(waveIndex + 1);
+    AppController.Instance.UI.SetWave(waveIndex + 1);
 
     while(duration > 0)
     {
       GameObject enemy = Instantiate(Resources.Load("Prefabs/Enemy"), this.transform) as GameObject;
       var enemyController = enemy.GetComponent<EnemyController>();
-      enemyController.Init(Waypoints, AppController.I.Waves[waveIndex].Enemy);
+      enemyController.Init(Waypoints, AppController.Instance.Waves[waveIndex].Enemy);
 
       Enemies.Add(enemyController);
 
@@ -38,7 +38,7 @@ public class LevelController : MonoBehaviour
 
     yield return new WaitForSecondsRealtime(5);
 
-    if (waveIndex + 1 < AppController.I.Waves.Length)
+    if (waveIndex + 1 < AppController.Instance.Waves.Length)
     {
       StartCoroutine(EnemyAddCoroutine(waveIndex + 1));      
     }

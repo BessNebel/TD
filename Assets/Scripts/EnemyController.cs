@@ -47,10 +47,10 @@ public class EnemyController : MonoBehaviour
   {
     if (killedByTower)
     {    
-      AppController.I.UI.Gain(Random.Range(Data.RevardMin, Data.RevardMax));
+      AppController.Instance.UI.Gain(Random.Range(Data.RevardMin, Data.RevardMax));
     }
 
-    AppController.I.Level.Enemies.Remove(this);
+    AppController.Instance.Level.Enemies.Remove(this);
     StopAllCoroutines();
     Destroy(gameObject);
   }
@@ -63,7 +63,7 @@ public class EnemyController : MonoBehaviour
     }
     else
     {
-      AppController.I.UI.Damage(Data.Damage);
+      AppController.Instance.UI.Damage(Data.Damage);
       OnDeath();
     }
   }
