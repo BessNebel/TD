@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.U2D;
 
 public class AppController : MonoBehaviour
@@ -9,6 +10,12 @@ public class AppController : MonoBehaviour
 
   public SpriteAtlas Atlas;
   public LevelController Level;
+
+  [NonSerialized]
+  public int Coins = 100;
+
+  [NonSerialized]
+  public int Health = 100;
 
   private void Start()
   {
